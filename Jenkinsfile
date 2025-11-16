@@ -45,7 +45,7 @@ pipeline {
             steps {
                 sh '''
                 ssh -o StrictHostKeyChecking=no \
-                -i ~/.ssh/devops-key.pem \
+                -i /var/lib/jenkins/.ssh/devops-key.pem \
                 ubuntu@44.192.71.249 "
                     cd /home/ubuntu/ansible &&
                     ansible-playbook deploy.yml
@@ -55,4 +55,5 @@ pipeline {
         }
     }
 }
+
 
