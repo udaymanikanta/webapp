@@ -44,12 +44,15 @@ pipeline {
         stage('Deploy With Ansible') {
             steps {
                 sh '''
-                ssh -o StrictHostKeyChecking=no $APP_SERVER '
+                ssh -o StrictHostKeyChecking=no \
+                -i ~/.ssh/devops-key.pem \
+                ubuntu@44.192.71.249 "
                     cd /home/ubuntu/ansible &&
                     ansible-playbook deploy.yml
-                '
+                "
                 '''
             }
         }
     }
 }
+
