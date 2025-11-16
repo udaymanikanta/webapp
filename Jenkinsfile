@@ -4,7 +4,7 @@ pipeline {
     environment {
         AWS_REGION = "us-east-1"
         ECR_REPO = "YOUR_ECR_ID.dkr.ecr.us-east-1.amazonaws.com/webapp-repo"
-        APP_SERVER = "ubuntu@APP_SERVER_PUBLIC_IP"
+        APP_SERVER = "ubuntu@44.192.71.249"
     }
 
     stages {
@@ -53,3 +53,4 @@ pipeline {
         }
     }
 }
+
